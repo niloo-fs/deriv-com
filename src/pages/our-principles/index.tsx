@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { principles } from './_data'
 import Layout from 'components/layout/layout'
-import { Header, Text } from 'components/elements'
+import { Header } from 'components/elements'
 import { SEO, Container, Flex, SectionContainer } from 'components/containers'
 import { Localize, localize, WithIntl } from 'components/localization'
 import device from 'themes/device'
@@ -33,7 +33,7 @@ const ColorHeader = styled(Header)`
     }
 `
 
-const StyledMainText = styled(Text)`
+const StyledMainText = styled(Header)`
     font-size: 24px;
     font-weight: 400;
 
@@ -43,11 +43,12 @@ const StyledMainText = styled(Text)`
     }
 `
 
-const StyledText = styled(Text)`
+const StyledText = styled(Header)`
     max-width: 792px;
     padding: 0 0 24px 0;
     line-height: 24px;
     font-weight: 400;
+    font-size: 1.6rem;
 
     @media ${device.mobileM} {
         font-size: 14px;
@@ -118,8 +119,8 @@ const OurPrinciples = () => {
                                 <ColorHeader as="h2" color={principle.color}>
                                     <Localize translate_text={principle.title} />
                                 </ColorHeader>
-                                {principle.description.map((description, key) => (
-                                    <Flex key={key} fd="column">
+                                {principle.description.map((description) => (
+                                    <Flex key={description.title} fd="column">
                                         <Header as="h3" type="subtitle-1">
                                             <Localize translate_text={description.title} />
                                         </Header>
