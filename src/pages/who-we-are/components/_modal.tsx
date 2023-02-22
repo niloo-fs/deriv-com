@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ModalFlex } from './leaders'
+import { ModalFlex } from './_leaders'
 import { Localize, LocalizedLink } from 'components/localization'
 import { Header } from 'components/elements'
 import Linkedin from 'images/svg/who-we-are/linkedin.svg'
