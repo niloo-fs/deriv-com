@@ -71,7 +71,7 @@ const Col = ({ Icon, content, title }: ColProps) => (
                 <Localize translate_text={title} />
             </StyledHeader>
             <Text lh="1.55" mt="1.8rem">
-                {content}
+               <Localize translate_text={content} />
             </Text>
         </Container>
     </GridCol>
