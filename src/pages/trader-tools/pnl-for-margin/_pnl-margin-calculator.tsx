@@ -276,7 +276,7 @@ const PnlMarginCalculator = () => {
 
                                 return (
                                     <>
-                                        <Desktop breakpoint={'tablet'}>
+                                        <Desktop breakpoint="tablet">
                                             <PnlCalculatorFormMobile>
                                                 <CalculatorHeader>
                                                     <Flex mb="24px">
@@ -1053,7 +1053,7 @@ const PnlMarginCalculator = () => {
                                     plus
                                     class_name="take-profit"
                                 >
-                                    <Desktop breakpoint={'tablet'}>
+                                    <Desktop breakpoint="tablet">
                                         <StopLoss />
                                     </Desktop>
                                     <Mobile>
@@ -1076,7 +1076,7 @@ const PnlMarginCalculator = () => {
                                     plus
                                     class_name="stop-loss"
                                 >
-                                    <Desktop breakpoint={'tablet'}>
+                                    <Desktop breakpoint="tablet">
                                         <PipValue />
                                     </Desktop>
                                     <Mobile>
@@ -1164,7 +1164,7 @@ const PnlMarginCalculator = () => {
                                     plus
                                     class_name="take-profit"
                                 >
-                                    <Desktop breakpoint={'tablet'}>
+                                    <Desktop breakpoint="tablet">
                                         <TakeProfitLevel />
                                     </Desktop>
                                     <Mobile>
@@ -1187,7 +1187,7 @@ const PnlMarginCalculator = () => {
                                     header_style={header_style}
                                     plus
                                 >
-                                    <Desktop breakpoint={'tablet'}>
+                                    <Desktop breakpoint="tablet">
                                         <ProfitPipValue />
                                     </Desktop>
                                     <Mobile>
