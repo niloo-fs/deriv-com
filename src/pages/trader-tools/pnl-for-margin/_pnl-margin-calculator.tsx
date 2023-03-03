@@ -715,7 +715,7 @@ const PnlMarginCalculator = () => {
                                                             </Flex>
                                                             <Flex fd="column">
                                                                 <CalculatorLabel htmlFor="message">
-                                                                    {localize('Take profit level')}
+                                                                    <Localize translate_text="_t_Take profit level_t_" />
                                                                 </CalculatorLabel>
                                                                 <PnLCalculatorOutputContainer>
                                                                     <PnLCalculatorOutputField>

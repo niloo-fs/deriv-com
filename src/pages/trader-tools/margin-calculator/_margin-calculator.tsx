@@ -213,7 +213,7 @@ const MarginCalculator = () => {
                                                 default_item={optionItemDefault}
                                                 error={touched.symbol && errors.symbol}
                                                 items={values.optionList}
-                                                label={localize('Symbol')}
+                                                label={localize('_t_Symbol_t_')}
                                                 onChange={(value) => {
                                                     setFieldValue(
                                                         'marginSymbol',
