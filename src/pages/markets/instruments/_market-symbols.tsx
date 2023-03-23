@@ -1,4 +1,3 @@
-import React, { ReactElement } from 'react'
 import * as icons from 'components/elements/symbols'
 import { TString } from 'types/generics'
 

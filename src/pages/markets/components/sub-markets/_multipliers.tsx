@@ -9,7 +9,7 @@ import type {
 } from '../../static/content/_multipliers'
 import { SectionContainer } from 'components/containers'
 import { Text } from 'components/elements'
-import { localize, Localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import useRegion from 'components/hooks/use-region'
 
 type MultipliersProps = {

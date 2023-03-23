@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Container, SectionContainer } from 'components/containers'
 import { Header, LocalizedLinkText, Text } from 'components/elements'
-import { localize, Localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import { affiliate_signin_url, login_url } from 'common/constants'
 
 const Span = styled(Text).attrs({ as: 'span' })`

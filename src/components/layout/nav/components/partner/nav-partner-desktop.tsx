@@ -1,18 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import {
-    NavRight,
-    LogoLink,
-    NavLink,
-    StyledLink,
-    DesktopWrapper,
-    Wrapper,
-} from '../../styles/nav-styles'
+import { NavRight, LogoLink, DesktopWrapper, Wrapper } from '../../styles/nav-styles'
 import { handleScroll, useMoveButton } from '../../util/nav-methods'
 import NavLinkCard, { NavLinkCardTypes } from '../nav-link-card'
-import { Localize, localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import { LinkButton } from 'components/form'
-import { useActiveLinkState } from 'components/hooks/use-active-link-state'
 import { affiliate_signin_url, affiliate_signup_url } from 'common/constants'
 import { getBaseRef } from 'common/utility'
 import LogoPartner from 'images/svg/layout/logo-partners.svg'

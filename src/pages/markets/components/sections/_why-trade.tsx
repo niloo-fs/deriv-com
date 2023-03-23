@@ -94,9 +94,7 @@ export const WhyTrade = ({ children, header, description }: WhyTradeProps) => {
     return (
         <StyledSection>
             <Flex direction="column" max_width="99.6rem" m="0 auto" jc="space-between" ai="center">
-                <StyledText>
-                    <Localize translate_text={description} />
-                </StyledText>
+                <StyledText>{description && <Localize translate_text={description} />}</StyledText>
                 <div>
                     <StyledHeader as="h2" type="section-title" align="center" mb="1.2rem" lh="1.25">
                         <Localize translate_text={header} />
@@ -109,7 +107,9 @@ export const WhyTrade = ({ children, header, description }: WhyTradeProps) => {
                             return (
                                 <Item key={idx} ai="center" direction="column">
                                     {icon}
-                                    {<StyledTextContent>{text}</StyledTextContent>}
+                                    <StyledTextContent>
+                                        <Localize translate_text={text} />
+                                    </StyledTextContent>
                                 </Item>
                             )
                         }

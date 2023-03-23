@@ -38,7 +38,6 @@ import {
     JumpIndicesDetails,
 } from './_details'
 import type { MarketInstrumentsElement } from 'pages/markets/components/sections/_market_instruments'
-import { Localize } from 'components/localization'
 
 export const commodities_cfds: MarketInstrumentsElement = {
     markets_list: {

@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink, StyledLinkMarket, MarketWrapper, Wrapper } from '../../styles/nav-styles'
+import { MarketWrapper, Wrapper } from '../../styles/nav-styles'
 import NavLinkCard, { NavLinkCardTypes } from '../nav-link-card'
 import device from 'themes/device'
-import { Localize, localize } from 'components/localization'
-import { useActiveLinkState } from 'components/hooks/use-active-link-state'
-import { TString } from 'types/generics'
 
 const StyledWrapper = styled(Wrapper)`
     justify-content: center;

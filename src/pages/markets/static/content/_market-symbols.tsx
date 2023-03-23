@@ -1,7 +1,5 @@
-import React, { ReactElement } from 'react'
 import * as icons from 'components/elements/symbols'
 import { TString } from 'types/generics'
-import { Localize } from 'components/localization'
 
 export type MarketSymbol = {
     src?: string

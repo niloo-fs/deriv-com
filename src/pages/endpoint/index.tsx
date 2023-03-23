@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Formik, Form } from 'formik'
 import device from 'themes/device'

@@ -4,7 +4,7 @@ import Cryptocurrencies from '../components/markets/_cryptocurrencies'
 import { simple_step_content_cryptocurrencies } from '../static/content/_cryptocurrencies'
 import Signup, { Appearances } from 'components/custom/signup'
 import Layout from 'components/layout/layout'
-import { localize, WithIntl } from 'components/localization'
+import { WithIntl } from 'components/localization'
 import { SEO } from 'components/containers'
 import { usePlatformQueryParam } from 'components/hooks/use-platform-query-param'
 

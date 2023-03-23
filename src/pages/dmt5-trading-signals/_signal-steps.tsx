@@ -4,11 +4,9 @@ import styled from 'styled-components'
 import Tabs, { LocalizeComponentAttributes } from '../trade-types/components/_tabs'
 import { Mobile, Desktop } from '../../components/containers'
 import { usePageLoaded } from 'components/hooks/use-page-loaded'
-import { Localize } from 'components/localization'
 import { QueryImage, LocalizedLinkText } from 'components/elements'
 import device from 'themes/device'
 import useRegion from 'components/hooks/use-region'
-import { TString } from 'types/generics'
 
 const Container = styled.section`
     width: 100%;

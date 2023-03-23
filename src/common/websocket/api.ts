@@ -1,5 +1,5 @@
 import { getAppId, getSocketURL } from './config'
-import { getCrowdin, getLanguage } from 'common/utility'
+import { getCrowdin } from 'common/utility'
 import { brand_name } from 'common/constants'
 
 interface DerivAPIRequest {

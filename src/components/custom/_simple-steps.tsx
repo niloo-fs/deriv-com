@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Localize } from 'components/localization'
 import { Button } from 'components/form'

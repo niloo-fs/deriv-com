@@ -1,7 +1,7 @@
 import React from 'react'
 import Timeline from '../components/_timeline'
 import { SmallContainer, StartTradingBg } from '../components/_style'
-import { Localize, localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import { LinkButton } from 'components/form'
 import { Header } from 'components/elements'
 import useRegion from 'components/hooks/use-region'

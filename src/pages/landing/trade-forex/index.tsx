@@ -16,7 +16,7 @@ const TradeForex = () => {
     const [is_mounted] = usePageLoaded() // needed to fix the second Hero-component during page's loading
 
     return (
-        <Layout type="landing-page" is_ppc_redirect={true}>
+        <Layout type="landing-page" is_ppc_redirect>
             <SEO title="_t_Weekends_t_" description="_t_Ride the trends even on weekends_t_" />
             {is_mounted && (
                 <>

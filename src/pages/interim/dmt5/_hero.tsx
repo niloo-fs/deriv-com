@@ -12,7 +12,7 @@ import {
 import CtaBinary from '../_cta-binary'
 import { Container } from 'components/containers'
 import { Header, QueryImage } from 'components/elements'
-import { localize, Localize } from 'components/localization'
+import { Localize } from 'components/localization'
 
 const query = graphql`
     query {

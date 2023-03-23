@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { Text } from '../elements'
 import device from 'themes/device'
-import { Localize, localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import { TString } from 'types/generics'
 // SVG Component
 import CrossIcon from 'images/svg/help/cross.svg'

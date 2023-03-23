@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react'
+import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { Text } from 'components/elements'
 import { Flex } from 'components/containers'

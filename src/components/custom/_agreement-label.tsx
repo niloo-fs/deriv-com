@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Checkbox, LocalizedLinkText } from 'components/elements'
-import { Localize, localize } from 'components/localization'
+import { Localize } from 'components/localization'
 import { usePageLoaded } from 'components/hooks/use-page-loaded'
 import device from 'themes/device'
 import { useIsRtl } from 'components/hooks/use-isrtl'

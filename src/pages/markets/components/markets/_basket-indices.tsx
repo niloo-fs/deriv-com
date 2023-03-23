@@ -4,7 +4,6 @@ import PageNotFound from '../../../404'
 import { WhyTrade } from '../sections/_why-trade'
 import AvailableTrades from '../helper/_available-trades'
 import { basket_indices_content, basket_indices_content_eu } from '../../static/content/_basket'
-import type { BasketIndicesContent } from '../../static/content/_basket'
 import { SimpleStepContentElement } from '../../static/content/_simple_step_content'
 import { StyledBox } from '../../static/style/_markets-style'
 import { basket_cfds } from '../../static/content/_cfds'
@@ -15,6 +14,7 @@ import Multipliers from '../sub-markets/_multipliers'
 import DigitalOptions from '../sub-markets/_digital-options'
 import { localize } from 'components/localization'
 import useRegion from 'components/hooks/use-region'
+import { TMarketsContent } from 'types/generics'
 
 //Lazy-load
 const SimpleSteps = Loadable(() => import('components/custom/_simple-steps'))
@@ -34,7 +34,7 @@ const BasketIndices = ({ simple_step_content }: BasketIndicesProps) => {
                         header="_t_Why trade basket indices on Deriv_t_"
                     >
                         {(!is_eu ? basket_indices_content : basket_indices_content_eu).map(
-                            (content: BasketIndicesContent, index) => (
+                            (content: TMarketsContent, index) => (
                                 <StyledBox
                                     key={index}
                                     text={content.text}
