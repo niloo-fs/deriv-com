@@ -2,13 +2,12 @@ import React, { useState, CSSProperties } from 'react'
 import styled from 'styled-components'
 import AgreementLabel from './_agreement-label'
 import { Input, Button } from 'components/form'
-import { Header, LinkText, LocalizedLinkText, Text } from 'components/elements'
+import { Header, LinkText, Text } from 'components/elements'
 import { Localize } from 'components/localization'
 import device from 'themes/device'
 // SVG
 import Apple from 'images/svg/custom/apple.svg'
 import Facebook from 'images/svg/custom/facebook-blue.svg'
-import BinaryLogo from 'images/svg/custom/binary-logo.svg'
 import Google from 'images/svg/custom/google.svg'
 import useRegion from 'components/hooks/use-region'
 
@@ -77,21 +76,7 @@ const StyledText = styled(Text)<StyledTextProps>`
         font-size: ${(props) => props.tabletFontSize || 'var(--text-size-xxs)'};
     }
 `
-const NoteBox = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    min-height: 7.7rem;
-    padding: 8px 8px;
-    margin-top: 1.6rem;
-    border-radius: 0.4rem;
-    background-color: rgba(242, 243, 244, 0.56);
 
-    @media ${device.mobileL} {
-        min-height: 80px;
-        padding: 13px 16px;
-    }
-`
 const InputGroup = styled.div`
     position: relative;
     width: 100%;
@@ -196,24 +181,6 @@ const StyledLinkText = styled(LinkText)`
     font-size: ${(props) => props.size || '14px'};
 `
 
-const StyledLocalizedLink = styled(LocalizedLinkText)`
-    @media ${device.tabletL} {
-        font-size: 10px;
-    }
-`
-
-const StyledBinaryLogo = styled.img`
-    height: 42px;
-    width: 43px;
-    margin-right: 8px;
-    margin-top: 1rem;
-
-    @media ${device.mobileL} {
-        margin-top: 8px;
-        height: 40px;
-        width: 40px;
-    }
-`
 const SignupNew = ({
     autofocus,
     clearEmail,
@@ -241,36 +208,6 @@ const SignupNew = ({
             <SubTitle>
                 <Localize translate_text="_t_Enter your email address to begin_t_" />
             </SubTitle>
-
-            {!is_ppc && (
-                <NoteBox>
-                    <StyledBinaryLogo src={BinaryLogo} alt="binarylogo" />
-                    <div>
-                        <StyledText
-                            mb="0.4rem"
-                            color="grey-16"
-                            size="var(--text-size-xs)"
-                            tabletFontSize="12px"
-                        >
-                            <Localize
-                                translate_text="_t_Got a <0>Binary.com</0> account?_t_"
-                                components={[<strong key={0} />]}
-                            />
-                        </StyledText>
-                        <StyledText
-                            size="var(--text-size-xxs)"
-                            tabletFontSize="12px"
-                            color="grey-16"
-                            lh="18px"
-                        >
-                            <Localize
-                                translate_text="_t_Log in to <0>Deriv.com</0> with your <0>Binary.com</0> username and password._t_"
-                                components={[<strong key={0} />]}
-                            />
-                        </StyledText>
-                    </div>
-                </NoteBox>
-            )}
 
             <InputGroup>
                 <Input
@@ -304,20 +241,7 @@ const SignupNew = ({
                 <Localize translate_text="_t_Create demo account_t_" />
             </EmailButton>
             <Header as="p" type="small" weight="400" color="grey-5" mt="0.8rem">
-                <Localize
-                    translate_text="_t_By pressing “Create demo account”, you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv’s <0>Security and privacy</0>._t_"
-                    components={[
-                        <StyledLocalizedLink
-                            key={0}
-                            to={`/tnc${is_eu ? '/eu' : ''}/security-and-privacy.pdf`}
-                            size="1.2rem"
-                            color="red"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            external
-                        />,
-                    ]}
-                />
+                <Localize translate_text="_t_By signing up for a Deriv account, you agree to receive occasional updates about our products, services, and events. You can unsubscribe at any time in your account settings._t_" />
             </Header>
             <SignupWithContainer>
                 <Line />

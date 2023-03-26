@@ -85,7 +85,7 @@ const NewSignup = () => {
                         </Header>
                         <br />
                         <Text>
-                            <Localize translate_text="_t_Join over 1 million people who trade with Deriv.com and Binary.com — the award-winning platform that’s been trusted for over 20 years._t_" />
+                            <Localize translate_text="_t_Ready to join over 2.5 million traders who have chosen Deriv as their trusted broker? Enter your email address to create a free demo account._t_" />
                         </Text>
                         <Line />
                     </Content>
