@@ -63,7 +63,7 @@ export const AsiaOceaniaDetails = () => (
 export const ContinuousIndicesDetails = () => (
     <DetailsContainer>
         <Text>
-            <Localize translate_text="_t_These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100%._t_" />
+            <Localize translate_text="_t_These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, 100%, 200%, and 300%._t_" />
         </Text>
         <Text>
             <Localize
