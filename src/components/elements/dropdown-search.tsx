@@ -16,7 +16,7 @@ import {
 } from 'components/hooks/use-dropdown'
 import device from 'themes/device'
 import { Flex } from 'components/containers'
-import { Localize } from 'components/localization'
+import { localize, Localize } from 'components/localization'
 
 type DropdownInputProps = {
     tabIndex?: number
@@ -132,7 +132,7 @@ const DropdownSearch = ({
                         has_short_name={has_short_name}
                         value={input_value}
                         is_active={is_open}
-                        placeholder={label}
+                        placeholder={localize(label)}
                     />
                     <Arrow onClick={toggleListVisibility} expanded={is_open} />
                 </Flex>
