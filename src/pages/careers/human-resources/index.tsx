@@ -8,8 +8,8 @@ const Career2 = () => {
     return (
         <>
             <SEO
-                title="_t_Deriv Careers | People Management & Technical Acquisition jobs_t_"
-                description="_t_See job vacancies in Deriv’s People Management and Technical Acquisition team. Join and grow with us._t_"
+                title="_t_Deriv Careers | Human Resources & Technical Acquisition jobs_t_"
+                description="_t_See job vacancies in Deriv’s Human Resources and Technical Acquisition team. Join and grow with us._t_"
             />
             <DepartmentPage data={career_data.people_management[0]} />
         </>

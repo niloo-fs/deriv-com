@@ -110,7 +110,7 @@ const StyledRefLink = styled(LocalizedLink)`
 const payment_data: PaymentDataProps[] = [
     {
         name: '_t_Credit/debit cards_t_',
-        note: '_t_Withdrawals may take up to 15 working days to reflect on your card._t_',
+        note: '_t_Withdrawals may take up to 15 working days to reflect on your card. Mastercard and Maestro withdrawals are only available for UK clients._t_',
         is_row: true,
         data: [
             {
@@ -208,16 +208,6 @@ const payment_data: PaymentDataProps[] = [
                 name: 'VisaElectron',
             },
             {
-                method: <StyledIcon src={MasterCard} alt="Mastercard" />,
-                currencies: 'USD EUR GBP',
-                min_max_deposit: '_t_10 - 10,000_t_',
-                min_max_withdrawal: '_t_Not applicable_t_',
-                deposit_time: '_t_Instant_t_',
-                withdrawal_time: '_t_Not applicable_t_',
-                description: '_t_Deposit funds using your Mastercard credit or debit card._t_',
-                name: 'mastercard',
-            },
-            {
                 method: <StyledIcon src={Maestro} alt="Maestro" />,
                 currencies: 'USD EUR GBP',
                 min_max_deposit: '_t_10 - 10,000_t_',
@@ -226,6 +216,16 @@ const payment_data: PaymentDataProps[] = [
                 withdrawal_time: '_t_1 working day_t_',
                 description: '_t_Deposit and withdraw funds using your Maestro debit card._t_',
                 name: 'maestro',
+            },
+            {
+                method: <StyledIcon src={MasterCard} alt="Mastercard" />,
+                currencies: 'USD EUR GBP',
+                min_max_deposit: '_t_10 - 10,000_t_',
+                min_max_withdrawal: '_t_Not applicable_t_',
+                deposit_time: '_t_Instant_t_',
+                withdrawal_time: '_t_Not applicable_t_',
+                description: '_t_Deposit funds using your Mastercard credit or debit card._t_',
+                name: 'mastercard',
             },
         ],
     },
@@ -298,10 +298,9 @@ const payment_data: PaymentDataProps[] = [
                 name: 'webmoney',
                 reference: 'webmoney-payment-method.pdf',
             },
-
             {
                 method: <StyledIcon src={PaysafeCard} alt="PaysafeCard" />,
-                currencies: 'USD AUD\nGBP EUR',
+                currencies: 'USD EUR AUD GBP',
                 min_max_deposit: '_t_5 - 1,000<0></0>5 - 10,000_t_',
                 min_max_deposit_components: [<br key={0} />],
                 min_max_withdrawal: '_t_5 - 750_t_',
