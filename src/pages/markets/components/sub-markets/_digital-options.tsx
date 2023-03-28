@@ -47,7 +47,10 @@ const DigitalOptions = ({ market_name, market_type, options_list }: DigitalOptio
                         <OptionsRow wrap={option[0].wrap} key={index} is_first_child={!index}>
                             {option.map((content, idx) => (
                                 <Col key={idx}>
-                                    <AvailableOptions content={content.text} {...content} />
+                                    <AvailableOptions
+                                        description={content.description}
+                                        {...content}
+                                    />
                                 </Col>
                             ))}
                         </OptionsRow>

@@ -7,7 +7,12 @@ import { TString } from 'types/generics'
 import { Localize } from 'components/localization'
 
 type AvailableOptionsProps = {
-    content: TString
+    description:
+        | TString
+        | {
+              text: TString
+              components?: React.ReactElement[]
+          }
     mobile_pt?: string
     remove_title?: boolean
     svg: string
@@ -40,7 +45,7 @@ const Icon = styled.img`
 
 const AvailableOptions = ({
     title,
-    content,
+    description,
     remove_title,
     svg,
     mobile_pt,
@@ -58,7 +63,14 @@ const AvailableOptions = ({
                 <Icon src={svg} />
                 <Box max_width="28.8rem">
                     <StyledText>
-                        <Localize translate_text={content} />
+                        {typeof description === 'object' ? (
+                            <Localize
+                                translate_text={description.text}
+                                components={description.components}
+                            />
+                        ) : (
+                            <Localize translate_text={description} />
+                        )}
                     </StyledText>
                 </Box>
             </Flex>
