@@ -144,3 +144,8 @@ export interface ClassProps {
     padding_block?: TSpacingSize
     radius?: TBorderRadius
 }
+
+export type PageContextType = {
+    locale: string
+    pathname: string
+}

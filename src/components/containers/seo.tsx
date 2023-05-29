@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { LocaleContext, localize } from '../localization'
+import { localize } from '../localization'
 import language_config from '../../../i18n-config'
 import { isBrowser } from 'common/utility'
 import { eu_urls } from 'common/constants'
@@ -34,6 +34,10 @@ type TSeo = {
     meta_attributes?: TMetaAttributes
     no_index?: boolean
     title?: string
+    pageContext?: {
+        locale: string
+        pathname: string
+    }
 }
 
 type TQueries = {
@@ -50,6 +54,7 @@ const SEO = ({
     no_index,
     has_organization_schema,
     meta_attributes,
+    pageContext,
 }: TSeo) => {
     const queries: TQueries = useStaticQuery(
         graphql`
@@ -69,7 +74,11 @@ const SEO = ({
     const no_index_staging = process.env.GATSBY_ENV === 'staging'
     const metaDescription = description || queries.site.siteMetadata.description
     const site_url = queries.site.siteMetadata.siteUrl
-    const { locale: lang, pathname } = React.useContext(LocaleContext)
+    // temporary default assignment till we export Head component in all of the pages
+    const { locale, pathname: myPath } = pageContext || {}
+    const lang = locale || 'en'
+    const pathname = myPath || ''
+
     const formatted_lang = lang.replace('_', '-')
     const locale_pathname = pathname.charAt(0) === '/' ? pathname : `/${pathname}`
     const default_og_title = localize(
@@ -184,5 +193,3 @@ const SEO = ({
 }
 
 export default SEO
-
-export const Head = () => <SEO />

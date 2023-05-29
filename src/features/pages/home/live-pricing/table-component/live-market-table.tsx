@@ -98,20 +98,18 @@ const LiveMarketTable = ({ selected_market, link_to }: TLiveMarketTableProps) =>
                 <table>
                     <thead>
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <Flex.Box key={headerGroup.id} justify="center">
-                                <tr className={table_row_header}>
-                                    {headerGroup.headers.map((header) => (
-                                        <th key={header.id}>
-                                            {header.isPlaceholder
-                                                ? null
-                                                : flexRender(
-                                                      header.column.columnDef.header,
-                                                      header.getContext(),
-                                                  )}
-                                        </th>
-                                    ))}
-                                </tr>
-                            </Flex.Box>
+                            <tr key={headerGroup.id} className={table_row_header}>
+                                {headerGroup.headers.map((header) => (
+                                    <th key={header.id}>
+                                        {header.isPlaceholder
+                                            ? null
+                                            : flexRender(
+                                                  header.column.columnDef.header,
+                                                  header.getContext(),
+                                              )}
+                                    </th>
+                                ))}
+                            </tr>
                         ))}
                     </thead>
                     <tbody>
