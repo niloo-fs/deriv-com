@@ -12,6 +12,7 @@ import Shape from 'components/custom/_hero-shape'
 import Button from 'components/custom/_button'
 import { useIsRtl } from 'components/hooks/use-isrtl'
 import { Container } from 'components/containers'
+import { localize } from 'components/localization'
 
 //TODO: (deriv-rebranding) to make the content section reusable .
 
@@ -101,11 +102,13 @@ const StyledContainer = styled(Container)`
         width: 100%;
     }
 `
+
 const DHero = () => {
     const { is_large_tablet, is_mobile, is_tablet } = useBreakpoints()
     const handleSignup = useHandleSignup()
     const [is_logged_in] = useAuthCheck()
     const is_rtl = useIsRtl()
+
     return (
         <BackgroundStyle>
             <StyledContainer jc="flex-start">
@@ -151,14 +154,14 @@ const DHero = () => {
                                     src="../../images/common/deriv-go/deriv-go-mobile.png"
                                     loading="eager"
                                     formats={['avif', 'webp', 'auto']}
-                                    alt="banner"
+                                    alt={localize('_t_banner_t_')}
                                 />
                             ) : is_large_tablet || is_tablet ? (
                                 <StaticImage
                                     src="../../images/common/deriv-go/banner_image_tablet.png"
                                     loading="eager"
                                     formats={['avif', 'webp', 'auto']}
-                                    alt="banner"
+                                    alt={localize('_t_banner_t_')}
                                     imgStyle={{ objectFit: 'contain' }}
                                 />
                             ) : (
@@ -166,7 +169,7 @@ const DHero = () => {
                                     src="../../images/common/deriv-go/banner_image.png"
                                     loading="eager"
                                     formats={['avif', 'webp', 'auto']}
-                                    alt="banner"
+                                    alt={localize('_t_banner_t_')}
                                     imgStyle={{ objectFit: 'contain' }}
                                 />
                             )}

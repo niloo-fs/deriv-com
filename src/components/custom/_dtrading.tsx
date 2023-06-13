@@ -1,15 +1,17 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import device from 'themes/device'
 import { Container, SectionContainer } from 'components/containers'
 import { Header, Text, QueryImage } from 'components/elements'
+import { TString } from 'types/generics'
+import { Localize, localize } from 'components/localization'
 
 type TradingType = {
-    title?: ReactElement | string
-    subtitle?: ReactElement | string
+    title: TString
+    subtitle: TString
     image_name?: string
-    image_alt?: string
+    image_alt: TString
     second_title?: string
     second_subtitle?: string
 }
@@ -58,7 +60,6 @@ const StyledSection = styled(SectionContainer)<SpaceProps>`
             }
         `}
 `
-
 const Content = styled.div<ContentProps>`
     width: 100%;
     max-width: 58.8rem;
@@ -75,7 +76,6 @@ const Content = styled.div<ContentProps>`
         margin: 0 auto;
     }
 `
-
 const ImageWrapper = styled.div<ImageWrapperProps>`
     max-width: ${(props) => props.max_width || '58.8rem'};
     width: 100%;
@@ -135,6 +135,7 @@ const Row = styled.div<RowProps>`
         flex-direction: column;
     }
 `
+
 const query = graphql`
     query {
         dbot_strategy: file(relativePath: { eq: "dbot/dbot-strategy.png" }) {
@@ -209,6 +210,7 @@ const query = graphql`
         }
     }
 `
+
 const DTrading = ({
     trading,
     reverse,
@@ -218,26 +220,21 @@ const DTrading = ({
     spacing,
 }: DTradingProps) => {
     const data = useStaticQuery(query)
+
     return (
         <StyledSection $spacing={spacing}>
             <Container direction="column">
-                {trading.map((item, index) => {
+                {trading.map(({ title, subtitle, image_alt, image_name }, index) => {
                     const is_even = reverse ? (index + 1) % 2 : index % 2
+
                     return (
-                        <Row
-                            flex_direction={!is_even ? 'row' : 'row-reverse'}
-                            key={
-                                typeof item.title === 'string'
-                                    ? item.title
-                                    : item.title.props.translate_text
-                            }
-                        >
+                        <Row flex_direction={!is_even ? 'row' : 'row-reverse'} key={title}>
                             <Content margin_right={!is_even ? '2.4rem' : '0'}>
                                 <StyledHeader type="page-title" as="h2">
-                                    {item.title}
+                                    <Localize translate_text={title} />
                                 </StyledHeader>
                                 <StyledTitle as="p" type="paragraph-1">
-                                    {item.subtitle}
+                                    <Localize translate_text={subtitle} />
                                 </StyledTitle>
                                 {two_title && (
                                     <>
@@ -257,8 +254,8 @@ const DTrading = ({
                                 max_height={max_height}
                             >
                                 <QueryImage
-                                    data={data[item.image_name]}
-                                    alt={item.image_alt}
+                                    data={data[image_name]}
+                                    alt={localize(image_alt)}
                                     width="100%"
                                 />
                             </ImageWrapper>

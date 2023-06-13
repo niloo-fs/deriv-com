@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { SectionContainer, Container, Flex } from 'components/containers'
 import { Header, ImageWithDireciton, LocalizedLinkText } from 'components/elements'
-import { Localize } from 'components/localization'
+import { Localize, localize } from 'components/localization'
 import device from 'themes/device'
 // icons
 import LowIcon from 'images/svg/bug-bounty/low.svg'
@@ -55,7 +55,7 @@ const Subtitle = styled(Header)`
 type TCardContent = {
     id: number
     icon: string
-    alt: string
+    alt: TString
     header: TString
     title_1: TString | { text: TString; components: React.ReactElement[] }
     sub_title_1?: TString
@@ -70,7 +70,7 @@ const card_content: TCardContent = [
     {
         id: 0,
         icon: CriticalIcon,
-        alt: 'Critical impact',
+        alt: '_t_Critical impact_t_',
         header: '_t_Critical_t_',
         title_1: '_t_Important business_t_',
         sub_title_1: '_t_Up to $10,000_t_',
@@ -82,7 +82,7 @@ const card_content: TCardContent = [
     {
         id: 1,
         icon: HighIcon,
-        alt: 'High impact',
+        alt: '_t_High impact_t_',
         header: '_t_High_t_',
         title_1: '_t_Important business_t_',
         sub_title_1: '_t_Up to $5,000_t_',
@@ -94,7 +94,7 @@ const card_content: TCardContent = [
     {
         id: 2,
         icon: MediumIcon,
-        alt: 'Medium impact',
+        alt: '_t_Medium impact_t_',
         header: '_t_Medium_t_',
         title_1: '_t_Important business_t_',
         sub_title_1: '_t_Up to $500_t_',
@@ -106,7 +106,7 @@ const card_content: TCardContent = [
     {
         id: 3,
         icon: LowIcon,
-        alt: 'Low impact',
+        alt: '_t_Low impact_t_',
         header: '_t_Low_t_',
         title_1: {
             text: '_t_We’ll reward reports on low-level vulnerabilities <0>only</0> if they help us fix severe security issues, and we’ll decide the reward amount on a case-to-case basis. _t_',
@@ -134,7 +134,7 @@ const Rewards = () => (
                     {card_content.map((item) => {
                         return (
                             <Card key={item.id}>
-                                <img src={item.icon} alt={item.alt} />
+                                <img src={item.icon} alt={localize(item.alt)} />
                                 <Header as="h3" mt="8px" mb="16px" align="center" type="subtitle-2">
                                     <Localize translate_text={item.header} />
                                 </Header>
@@ -195,7 +195,12 @@ const Rewards = () => (
                         />,
                     ]}
                 />
-                <ImageWithDireciton src={Arrow} alt="arrow" width="16" height="16" />
+                <ImageWithDireciton
+                    src={Arrow}
+                    alt={localize('_t_arrow_t_')}
+                    width="16"
+                    height="16"
+                />
             </Flex>
         </Container>
     </StyledSectionContainer>

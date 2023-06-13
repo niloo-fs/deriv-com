@@ -6,6 +6,7 @@ import DerivEZ from 'features/pages/deriv-ez'
 
 const DerivEZPage = () => {
     const { is_row } = useRegion()
+
     if (is_row) {
         return <DerivEZ />
     }

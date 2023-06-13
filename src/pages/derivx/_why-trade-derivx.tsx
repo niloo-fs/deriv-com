@@ -8,7 +8,7 @@ import device from 'themes/device'
 import Icon24_7 from 'images/svg/deriv-x/24-7.svg'
 import IconMultipleMarketing from 'images/svg/deriv-x/multiple-marketing.svg'
 import IconNewPromising from 'images/svg/deriv-x/new-promising.svg'
-import BoxStyledGrid from 'components/custom/_box-styled-grid'
+import BoxStyledGrid, { TBoxStyledGridItem } from 'components/custom/_box-styled-grid'
 
 type TradingType = {
     title?: ReactElement
@@ -16,6 +16,7 @@ type TradingType = {
     image_name?: string
     image_alt?: string
 }
+
 const StyledSectionContainer = styled(SectionContainer)`
     @media ${device.tablet} {
         font-size: 28px;
@@ -70,30 +71,26 @@ const trading: TradingType[] = [
     },
 ]
 
-const card_data = [
+const card_data: TBoxStyledGridItem[] = [
     {
         icon: IconNewPromising,
-        title: <Localize translate_text="New and promising" />,
-        subtitle: (
-            <Localize translate_text="Deriv X is our second CFD platform, after MT5. It’s packed with features and built to fit your trading style." />
-        ),
-        image_alt: 'New CFD trading platform',
+        title: '_t_New and promising_t_',
+        subtitle:
+            '_t_Deriv X is our second CFD platform, after MT5. It’s packed with features and built to fit your trading style._t_',
+        icon_alt: '_t_New CFD trading platform_t_',
     },
     {
         icon: IconMultipleMarketing,
-        title: <Localize translate_text="Multiple markets on a single platform" />,
-        subtitle: (
-            <Localize translate_text="Trade various assets in multiple markets simultaneously." />
-        ),
-        image_alt: 'Trade on multiple markets',
+        title: '_t_Multiple markets on a single platform_t_',
+        subtitle: '_t_Trade various assets in multiple markets simultaneously._t_',
+        icon_alt: '_t_Trade on multiple markets_t_',
     },
     {
         icon: Icon24_7,
-        title: <Localize translate_text="24/7 trading" />,
-        subtitle: (
-            <Localize translate_text="Trade cryptocurrencies and synthetics anytime, even on weekends and holidays." />
-        ),
-        image_alt: 'Trade any time of the day and week',
+        title: '_t_24/7 trading_t_',
+        subtitle:
+            '_t_Trade cryptocurrencies and synthetics anytime, even on weekends and holidays._t_',
+        icon_alt: '_t_Trade any time of the day and week_t_',
     },
 ]
 
@@ -103,7 +100,7 @@ const WhyTradeDerivX = () => {
             <StyledSectionContainer>
                 <Container fd="column">
                     <StyledHeader type="page-title" align="center" as="h2">
-                        {localize('Why trade with Deriv X')}
+                        <Localize translate_text="_t_Why trade with Deriv X_t_" />
                     </StyledHeader>
                     <BoxStyledGrid items={card_data} />
                 </Container>

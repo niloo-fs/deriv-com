@@ -6,47 +6,44 @@ import dGoIcon from 'images/svg/deriv-ez/go-icon.svg'
 import dbIcon from 'images/svg/deriv-ez/db-icon.svg'
 import GenericCarousel, { TRenderableData } from 'components/custom/carousel/_platforms-carousel'
 
-const OurPlatforms = () => {
-    const carouselData: TRenderableData[] = [
-        {
-            icon: dmt5Icon,
-            heading: 'Deriv MT5',
-            paragraph: '_t_The all-in-one CFD trading platform._t_',
-            link: '/dmt5/',
-        },
-        {
-            icon: dtIcon,
-            heading: 'Deriv Trader',
-            paragraph: '_t_Our flagship app for trading options and multipliers._t_',
-            link: '/dtrader/',
-        },
-        {
-            icon: dGoIcon,
-            heading: 'Deriv Go',
-            paragraph: '_t_Our best trading experience on your mobile._t_',
-            link: '/deriv-go/',
-        },
-        {
-            icon: dxIcon,
-            heading: 'Deriv X',
-            paragraph: '_t_The CFD trading platform to fit your style._t_',
-            link: '/derivx/',
-        },
-        {
-            icon: dbIcon,
-            heading: 'Deriv Bot',
-            paragraph: '_t_Automate your trading. No coding required._t_',
-            link: '/dbot/',
-        },
-    ]
-    return (
-        <>
-            <GenericCarousel
-                renderableData={carouselData}
-                mainHeading="_t_Check out our other platforms_t_"
-            />
-        </>
-    )
-}
+const carouselData: TRenderableData[] = [
+    {
+        icon: dmt5Icon,
+        heading: '_t_Deriv MT5_t_',
+        paragraph: '_t_The all-in-one CFD trading platform._t_',
+        link: '/dmt5/',
+    },
+    {
+        icon: dtIcon,
+        heading: '_t_Deriv Trader_t_',
+        paragraph: '_t_Our flagship app for trading options and multipliers._t_',
+        link: '/dtrader/',
+    },
+    {
+        icon: dGoIcon,
+        heading: '_t_Deriv Go_t_',
+        paragraph: '_t_Our best trading experience on your mobile._t_',
+        link: '/deriv-go/',
+    },
+    {
+        icon: dxIcon,
+        heading: '_t_Deriv X_t_',
+        paragraph: '_t_The CFD trading platform to fit your style._t_',
+        link: '/derivx/',
+    },
+    {
+        icon: dbIcon,
+        heading: '_t_Deriv Bot_t_',
+        paragraph: '_t_Automate your trading. No coding required._t_',
+        link: '/dbot/',
+    },
+]
+
+const OurPlatforms = () => (
+    <GenericCarousel
+        renderableData={carouselData}
+        mainHeading="_t_Check out our other platforms_t_"
+    />
+)
 
 export default OurPlatforms

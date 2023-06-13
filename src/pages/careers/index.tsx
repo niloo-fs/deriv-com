@@ -21,8 +21,8 @@ const meta_attributes = {
 const Careers = () => (
     <Layout type="careers">
         <SEO
-            title={'Deriv Careers | Join and grow with us'}
-            description={'Join our incredible team where your growth is just as important as ours.'}
+            title="Deriv Careers | Join and grow with us"
+            description="Join our incredible team where your growth is just as important as ours."
             meta_attributes={meta_attributes}
         />
         <Hero />

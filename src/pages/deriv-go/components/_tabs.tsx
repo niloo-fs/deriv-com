@@ -3,6 +3,8 @@ import styled, { css, keyframes } from 'styled-components'
 import { Flex, Desktop, Mobile } from 'components/containers'
 import { Text } from 'components/elements'
 import device, { SizeType } from 'themes/device'
+import { TString } from 'types/generics'
+import { Localize } from 'components/localization'
 
 const TabContent = styled.div`
     flex: 1;
@@ -126,8 +128,8 @@ const MobileWrapper = styled(Mobile)`
 
 type TabsProps = {
     children: ReactElement[] | ReactElement
-    label?: ReactElement
-    description?: ReactElement
+    label?: TString
+    description?: TString
     className?: string
     is_reverse?: boolean
     max_width?: SizeType
@@ -165,6 +167,7 @@ const Tabs = ({ children, is_reverse, className, max_width }: TabsProps) => {
                         const {
                             props: { label, description },
                         } = child
+
                         return (
                             <>
                                 <TabButton
@@ -178,14 +181,14 @@ const Tabs = ({ children, is_reverse, className, max_width }: TabsProps) => {
                                         className="side-tab__label"
                                         weight="bold"
                                     >
-                                        {label}
+                                        {label && <Localize translate_text={label} />}
                                     </TextLabel>
                                     <TextDesc
                                         selected={selected_tab === index}
                                         className="side-tab__description"
                                         mt="0.8rem"
                                     >
-                                        {description}
+                                        {description && <Localize translate_text={description} />}
                                     </TextDesc>
                                 </TabButton>
                                 <MobileWrapper

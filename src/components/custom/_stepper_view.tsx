@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Localize } from 'components/localization'
 import device from 'themes/device'
+import { TString } from 'types/generics'
 
 type TItem = {
-    title: () => JSX.Element
+    title: () => TString
     image: () => JSX.Element
 }
 
@@ -25,6 +27,7 @@ type ItemsWrapperProps = {
 type ImageWrapperProps = {
     width?: string
 }
+
 const Wrapper = styled.div<{ reverse: boolean; gap: string }>`
     display: flex;
     align-items: center;
@@ -53,12 +56,10 @@ const ItemsWrapper = styled.div<ItemsWrapperProps>`
         padding-left: 16px;
     }
 `
-
 const ImageWrapper = styled.div`
     flex: 1;
     margin: 0 auto;
 `
-
 const UlStyle = styled.ul`
     font-size: var(--text-size-m);
     line-height: 36px;
@@ -115,7 +116,7 @@ const StepperView: React.FC<TProps> = ({
                             onClick={() => setSelected(index)}
                         >
                             {`${index + 1}. `}
-                            {item.title()}
+                            <Localize translate_text={item.title()} />
                         </li>
                     ))}
                 </UlStyle>

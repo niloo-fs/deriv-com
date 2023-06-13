@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { Header, QueryImage, Text, LocalizedLinkText } from 'components/elements'
 import { SectionContainer, Container, Flex, Box, Desktop, Mobile } from 'components/containers'
-import { Localize, LocalizedLink } from 'components/localization'
+import { Localize, LocalizedLink, localize } from 'components/localization'
 import device from 'themes/device'
 import France from 'images/svg/contact/france.svg'
 import Malta from 'images/svg/contact/malta.svg'
@@ -261,7 +261,7 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="france">
                             <OfficeHeader>
                                 <div>
-                                    <img src={UK} alt="UK" />
+                                    <img src={UK} alt={localize('_t_UK_t_')} />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_United Kingdom_t_" />
@@ -277,7 +277,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in UK"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in UK_t_",
+                                            )}
                                             data={data['map_uk']}
                                             height="100%"
                                         />
@@ -309,7 +311,10 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="france">
                             <OfficeHeader>
                                 <div>
-                                    <img src={France} alt="France - Eiffel Tower" />
+                                    <img
+                                        src={France}
+                                        alt={localize('_t_France - Eiffel Tower_t_')}
+                                    />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_France_t_" />
@@ -325,7 +330,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in France"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in France_t_",
+                                            )}
                                             data={data['map_france']}
                                             height="100%"
                                         />
@@ -353,7 +360,7 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="malta">
                             <OfficeHeader>
                                 <div>
-                                    <img src={Malta} alt="Malta - Valleta" />
+                                    <img src={Malta} alt={localize('_t_Malta - Valleta_t_')} />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_Malta_t_" />
@@ -368,7 +375,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in Malta"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in Malta_t_",
+                                            )}
                                             data={data['map_malta']}
                                             height="100%"
                                         />
@@ -399,7 +408,7 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="cyprus">
                             <OfficeHeader>
                                 <div>
-                                    <img src={Cyprus} alt="Cyprus - Limassol" />
+                                    <img src={Cyprus} alt={localize('_t_Cyprus - Limassol_t_')} />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_Cyprus_t_" />
@@ -414,7 +423,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in Cyprus"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in Cyprus_t_",
+                                            )}
                                             data={data['map_cyprus']}
                                             height="100%"
                                         />
@@ -446,7 +457,10 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="guernsey">
                             <OfficeHeader>
                                 <div>
-                                    <img src={Guernsey} alt="Guernsey - Sark Lighthouse" />
+                                    <img
+                                        src={Guernsey}
+                                        alt={localize('_t_Guernsey - Sark Lighthouse_t_')}
+                                    />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_Guernsey_t_" />
@@ -461,7 +475,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in Guernsey"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in Guernsey_t_",
+                                            )}
                                             data={data['map_guernsey']}
                                             height="100%"
                                         />
@@ -495,7 +511,10 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Malaysia} alt="Malaysia - Petronas Twin Towers" />
+                                <img
+                                    src={Malaysia}
+                                    alt={localize('_t_Malaysia - Petronas Twin Towers_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Malaysia_t_" />
@@ -512,7 +531,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Cyberjaya"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Cyberjaya_t_",
+                                                )}
                                                 data={data['map_cyberjaya']}
                                                 height="100%"
                                             />
@@ -548,7 +569,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Labuan"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Labuan_t_",
+                                                )}
                                                 data={data['map_labuan']}
                                                 height="100%"
                                             />
@@ -585,7 +608,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Ipoh"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Ipoh_t_",
+                                                )}
                                                 data={data['map_ipoh']}
                                                 height="100%"
                                             />
@@ -622,7 +647,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Melaka"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Melaka_t_",
+                                                )}
                                                 data={data['map_melaka']}
                                                 height="100%"
                                             />
@@ -656,7 +683,10 @@ export const Offices = () => {
                     <Flex mt="30px" fd="column" id="singapore">
                         <OfficeHeader>
                             <div>
-                                <img src={Singapore} alt="Singapore - Merlion Park" />
+                                <img
+                                    src={Singapore}
+                                    alt={localize('_t_Singapore - Merlion Park_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Singapore_t_" />
@@ -673,7 +703,9 @@ export const Offices = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <QueryImage
-                                        alt="Deriv's office location map in Singapore"
+                                        alt={localize(
+                                            "_t_Deriv's office location map in Singapore_t_",
+                                        )}
                                         data={data['map_singapore']}
                                         height="100%"
                                     />
@@ -703,7 +735,7 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="dubai">
                             <OfficeHeader>
                                 <div>
-                                    <img src={Dubai} alt="Dubai - Burj Al Arab" />
+                                    <img src={Dubai} alt={localize('_t_Dubai - Burj Al Arab_t_')} />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_Dubai_t_" />
@@ -718,7 +750,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in Dubai"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in Dubai_t_",
+                                            )}
                                             data={data['map_dubai']}
                                             height="100%"
                                         />
@@ -747,7 +781,7 @@ export const Offices = () => {
                         <Flex mt="30px" fd="column" max_width="48.6rem" id="jordan">
                             <OfficeHeader>
                                 <div>
-                                    <img src={Jordan} alt="Jordan - Petra Gate" />
+                                    <img src={Jordan} alt={localize('_t_Jordan - Petra Gate_t_')} />
                                 </div>
                                 <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                     <Localize translate_text="_t_Jordan_t_" />
@@ -762,7 +796,9 @@ export const Offices = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <QueryImage
-                                            alt="Deriv's office location map in Jordan"
+                                            alt={localize(
+                                                "_t_Deriv's office location map in Jordan_t_",
+                                            )}
                                             data={data['map_jordan']}
                                             height="100%"
                                         />
@@ -798,7 +834,10 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Belarus} alt="Belarus - National Library" />
+                                <img
+                                    src={Belarus}
+                                    alt={localize('_t_Belarus - National Library_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Belarus_t_" />
@@ -815,7 +854,9 @@ export const Offices = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <QueryImage
-                                        alt="Deriv's office location map in Belarus"
+                                        alt={localize(
+                                            "_t_Deriv's office location map in Belarus_t_",
+                                        )}
                                         data={data['map_belarus_contact']}
                                         height="100%"
                                     />
@@ -847,7 +888,10 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Rwanda} alt="Rwanda - Kigali Convention Center" />
+                                <img
+                                    src={Rwanda}
+                                    alt={localize('_t_Rwanda - Kigali Convention Center_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Rwanda_t_" />
@@ -864,7 +908,9 @@ export const Offices = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <QueryImage
-                                        alt="Deriv's office location map in Rwanda"
+                                        alt={localize(
+                                            "_t_Deriv's office location map in Rwanda_t_",
+                                        )}
                                         data={data['map_rwanda']}
                                         height="100%"
                                     />
@@ -897,7 +943,10 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Paraguay} alt="Paraguay - National Pantheon of Heroes" />
+                                <img
+                                    src={Paraguay}
+                                    alt={localize('_t_Paraguay - National Pantheon of Heroes_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Paraguay_t_" />
@@ -914,7 +963,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Cyberjaya"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Cyberjaya_t_",
+                                                )}
                                                 data={data['map_paraguay']}
                                                 height="100%"
                                             />
@@ -951,7 +1002,9 @@ export const Offices = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <QueryImage
-                                                alt="Deriv's office location map in Ciudad del Este"
+                                                alt={localize(
+                                                    "_t_Deriv's office location map in Ciudad del Este_t_",
+                                                )}
                                                 data={data['map_ciudad']}
                                                 height="100%"
                                             />
@@ -985,7 +1038,10 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Cayman} alt="Cayman Islands - George Town" />
+                                <img
+                                    src={Cayman}
+                                    alt={localize('_t_Cayman Islands - George Town_t_')}
+                                />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Cayman Islands_t_" />
@@ -1002,7 +1058,9 @@ export const Offices = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <QueryImage
-                                        alt="Deriv's office location map in Cayman"
+                                        alt={localize(
+                                            "_t_Deriv's office location map in Cayman_t_",
+                                        )}
                                         data={data['map_cayman']}
                                         height="100%"
                                     />
@@ -1037,7 +1095,7 @@ export const Offices = () => {
                         </ContinentHeader>
                         <OfficeHeader>
                             <div>
-                                <img src={Vanuatu} alt="Vanuatu - Port Vila" />
+                                <img src={Vanuatu} alt={localize('_t_Vanuatu - Port Vila_t_')} />
                             </div>
                             <Header as="h4" type="sub-section-title" mt="0.8rem" mb="1.6rem">
                                 <Localize translate_text="_t_Vanuatu_t_" />
@@ -1054,7 +1112,9 @@ export const Offices = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <QueryImage
-                                        alt="Deriv's office location map in Vanuatu"
+                                        alt={localize(
+                                            "_t_Deriv's office location map in Vanuatu_t_",
+                                        )}
                                         data={data['map_vanuatu']}
                                         height="100%"
                                     />

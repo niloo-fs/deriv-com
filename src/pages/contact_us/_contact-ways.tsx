@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Header, QueryImage } from 'components/elements'
 import { SectionContainer, Container, Flex } from 'components/containers'
-import { Localize } from 'components/localization'
+import { Localize, localize } from 'components/localization'
 import { LinkButton } from 'components/form'
 import device from 'themes/device'
 import { TString } from 'types/generics'
@@ -13,7 +13,7 @@ type TContactWays = {
     header: TString
     text: TString
     image: string
-    img_alt: string
+    img_alt: TString
     button: JSX.Element
 }[]
 
@@ -43,7 +43,7 @@ const contactways: TContactWays = [
         header: '_t_Ask everyone_t_',
         text: '_t_Our Deriv support community can help you find answers._t_',
         image: 'community',
-        img_alt: "Deriv's support community",
+        img_alt: "_t_Deriv's support community_t_",
         button: (
             <StyledLinkButton
                 secondary
@@ -62,7 +62,7 @@ const contactways: TContactWays = [
         header: '_t_We’re here to help_t_',
         text: '_t_See frequently asked questions on popular topics to get quick answers._t_',
         image: 'help',
-        img_alt: "Deriv's help centre",
+        img_alt: "_t_Deriv's help centre_t_",
         button: (
             <StyledLinkButton secondary to="/help-centre/">
                 <Localize translate_text="_t_Visit our Help centre_t_" />
@@ -130,7 +130,7 @@ const ContactWays = () => {
                                 <ImgWrapper>
                                     <QueryImage
                                         data={data[item.image]}
-                                        alt={item.img_alt}
+                                        alt={localize(item.img_alt)}
                                         width="100%"
                                         loading="eager"
                                     />

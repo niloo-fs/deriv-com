@@ -8,10 +8,8 @@ const Career2 = () => {
     return (
         <>
             <SEO
-                title={'Deriv Careers | Legal and Compliance jobs'}
-                description={
-                    'See job vacancies in Deriv’s Legal and Compliance team. Join and grow with us.'
-                }
+                title="Deriv Careers | Legal and Compliance jobs"
+                description="See job vacancies in Deriv’s Legal and Compliance team. Join and grow with us."
             />
             <DepartmentPage data={career_data.compliance[0]} />
         </>

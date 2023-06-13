@@ -8,10 +8,8 @@ const Career2 = () => {
     return (
         <>
             <SEO
-                title={'Deriv Careers | Project management jobs'}
-                description={
-                    'See job vacancies in Deriv’s Project management team. Join and grow with us.'
-                }
+                title="Deriv Careers | Project management jobs"
+                description="See job vacancies in Deriv’s Project management team. Join and grow with us."
             />
             <DepartmentPage data={career_data.pm[0]} />
         </>

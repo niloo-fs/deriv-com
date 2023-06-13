@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Container, SectionContainer, Flex } from 'components/containers'
-import { Localize } from 'components/localization'
+import { Localize, localize } from 'components/localization'
 import { Header, LocalizedLinkText, QueryImage } from 'components/elements'
 import { useBrowserResize } from 'components/hooks/use-browser-resize'
 import device from 'themes/device'
@@ -114,7 +114,9 @@ const SubmitABugReport = () => {
                     <ImageWrap>
                         <QueryImage
                             data={bug_report_image}
-                            alt="Try Deriv’s trading platforms and trading apps on your laptop or mobile phones."
+                            alt={localize(
+                                '_t_Try Deriv’s trading platforms and trading apps on your laptop or mobile phones._t_',
+                            )}
                             width="100%"
                         />
                     </ImageWrap>

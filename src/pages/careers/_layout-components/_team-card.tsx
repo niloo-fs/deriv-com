@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import { QueryImage, Text, Header } from 'components/elements'
@@ -74,6 +73,7 @@ type TeamCardProps = {
     img_data: ImageDataLike
     img_alt: string
     tagline: string
+    team_name?: string
 }
 
 const TeamCard = ({ to, img_data, img_alt, display_team_name, tagline }: TeamCardProps) => (
@@ -87,14 +87,5 @@ const TeamCard = ({ to, img_data, img_alt, display_team_name, tagline }: TeamCar
         </StyledContent>
     </StyledCard>
 )
-
-TeamCard.propTypes = {
-    display_team_name: PropTypes.string,
-    img_alt: PropTypes.string,
-    img_data: PropTypes.object,
-    tagline: PropTypes.string,
-    team_name: PropTypes.string,
-    to: PropTypes.string,
-}
 
 export default TeamCard

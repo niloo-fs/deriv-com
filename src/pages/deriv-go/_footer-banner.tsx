@@ -18,6 +18,7 @@ import {
     deriv_go_ios_url,
 } from 'common/constants'
 import DownloadColumn from 'components/custom/_multi-width-column-download'
+import { localize } from 'components/localization'
 
 const items = [
     { text: 'Google Play', icon: AndroidIcon, link: deriv_go_playstore_url },
@@ -62,7 +63,12 @@ const DerivGoGetApp = () => {
             secondColumnMobileMargin="8rem 0 0 0"
         >
             <ContentWrapper is_rtl={is_rtl}>
-                <img src={derivGoLogo} alt="Deriv Go logo" width="64px" height="64px" />
+                <img
+                    src={derivGoLogo}
+                    alt={localize('_t_Deriv Go logo_t_')}
+                    width="64px"
+                    height="64px"
+                />
                 <TextAndButtonWrapper>
                     <CommonHeaderSection
                         title="_t_Get trading with Deriv GO_t_"

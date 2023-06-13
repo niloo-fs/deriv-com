@@ -4,7 +4,7 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 import { BackgroundImage, Header } from 'components/elements'
 import { Container } from 'components/containers'
 import device from 'themes/device'
-import { Localize } from 'components/localization'
+import { Localize, localize } from 'components/localization'
 
 interface HeroComponentProps {
     background_data: ImageDataLike
@@ -30,7 +30,7 @@ const HeroComponent = ({ background_data, background_dark }: HeroComponentProps)
     return (
         <BackgroundImage
             data={background_data}
-            alt="deriv security"
+            alt={localize('_t_deriv security_t_')}
             style={{
                 backgroundSize: `cover`,
                 maxWidth: '100%',

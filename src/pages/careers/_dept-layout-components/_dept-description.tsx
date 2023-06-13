@@ -86,6 +86,7 @@ type DeptDataProps = {
 
 const DeptDescription = (dept_data: DeptDataProps) => {
     const data = useStaticQuery(query)
+
     return (
         <SectionContainer>
             <Container>
